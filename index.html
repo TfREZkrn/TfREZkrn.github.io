@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>monet miner</title>
+  </head>
+  <body>
+    <span>monets:</span>
+    <span id="monets">0</span>
+    <br>
+    <br>
+    <button>do monet</button>
+    <script>
+      monets = 0;
+      cash = 0;
+      function refresh(){
+        document.getElementByID("monets").textContent=monets;
+      }
+      function mine(){
+        monets += 1;
+        refresh()
+      }
+    </script>
+  </body>
+</html>
