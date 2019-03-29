@@ -6,18 +6,35 @@
     <span>monets:</span>
     <span id="monets">0</span>
     <br>
+    <span>¢@$ɥed out:</span>
+    <span id="cash">0</span>
+    <br>
     <br>
     <button onclick="mine()">do monet</button>
+    <button onclick="cashin()">¢@$ɥ in</button>
     <script>
       monets = 0;
       cash = 0;
       function refresh(){
-        //for some reason, getElementById is not updating on the site from ...ByID therefore, it does not work
         document.getElementById("monets").textContent=monets;
+        document.getElementById("cash").textContent=cash;
       }
+
       function mine(){
         monets += 1;
         refresh()
+      }
+
+      function cashin(){
+        if (monets >= 5){
+          monets = monets-5;
+          cash = cash+1;
+          refresh()
+        }
+        else{
+          alert("you need more monets before you can ¢@$ɥ in!");
+        }
+
       }
     </script>
   </body>
