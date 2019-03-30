@@ -10,6 +10,20 @@
       gtag('config', 'UA-137280026-1');
     </script>
 
+    <style>
+      button {
+        height:5%;
+        border:3;
+        border-color:black;
+        background-color:gray;
+      }
+
+      span[id]{
+        border:solid 1px black;
+        background-color:lightgray;
+        padding:2px;
+      }
+    </style>
     <title>monet miner</title>
   </head>
   <body>
@@ -29,11 +43,11 @@
     <span id="epic">0</span>
     <br>
     <br>
-    <button onclick="mine()">do monet</button>
-    <button onclick="cashin()">¢@$ɥ in</button>
-    <button onclick="arcc()">fly to the arctic</button>
-    <button onclick="rddt()">buy reddit silver</button>
-    <button onclick="ecoin()">become epic</button>
+    <button onclick="mine()" style="color:red;">do monet</button>
+    <button onclick="cashin()" style="color:limegreen;">¢@$ɥ in</button>
+    <button onclick="arcc()" style="color:white;">fly to the arctic</button>
+    <button onclick="rddt()" style="color:silver;">buy reddit silver</button>
+    <button onclick="ecoin()" style="color:gold;">become epic</button>
     <script>
       monets = 0;
       cash = 0;
@@ -46,7 +60,7 @@
         document.getElementById("arc").textContent=arc;
         document.getElementById("reddit").textContent=reddit;
         document.getElementById("epic").textContent=epic;
-        if (epic == 1){ alert("IF YOU USED A MF AUTOCLICKER, I WILL TAKE THIS WEBSITE DOWN."); }
+
       }
 
       function mine(){
@@ -93,6 +107,7 @@
           reddit = reddit-5;
           epic += 1;
           refresh()
+          if (epic == 1){ alert("IF YOU USED A MF AUTOCLICKER, I WILL TAKE THIS WEBSITE DOWN."); }
         }
 
         else { alert("you need more reddit silver before you can become E P I C!"); }
