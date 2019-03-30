@@ -9,15 +9,21 @@
     <span>¢@$ɥed out:</span>
     <span id="cash">0</span>
     <br>
+    <span>arkittik crekdits:</span>
+    <span id="arc">0</span>
+    <br>
     <br>
     <button onclick="mine()">do monet</button>
     <button onclick="cashin()">¢@$ɥ in</button>
+    <button onclick="arcc()">fly to the arctic</button>
     <script>
       monets = 0;
       cash = 0;
+      arc = 0;
       function refresh(){
         document.getElementById("monets").textContent=monets;
         document.getElementById("cash").textContent=cash;
+        document.getElementById("arc").textContent=arc;
       }
 
       function mine(){
@@ -33,6 +39,18 @@
         }
         else{
           alert("you need more monets before you can ¢@$ɥ in!");
+        }
+
+      }
+
+      function arcc(){
+        if (cash >= 5){
+          cash = cash-5;
+          arc += 1;
+          refresh()
+        }
+        else{
+          alert("you need more ¢@$ɥ ins before you can fly to the arctic");
         }
 
       }
