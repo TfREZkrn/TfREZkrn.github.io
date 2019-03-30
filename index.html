@@ -26,21 +26,21 @@
     </style>
     <title>monet miner</title>
   </head>
-  <body>
+  <body onload="refresh()">
     <span>monets:</span>
-    <span id="monets">0</span>
+    <span id="monets"></span>
     <br>
     <span>¢@$ɥed out:</span>
-    <span id="cash">0</span>
+    <span id="cash"></span>
     <br>
     <span>arkittik crekdits:</span>
-    <span id="arc">0</span>
+    <span id="arc"></span>
     <br>
     <span>reddit silver (reddit silver not redeemable for actual reddit silver!):</span>
-    <span id="reddit">0</span>
+    <span id="reddit"></span>
     <br>
     <span>epic coin:</span>
-    <span id="epic">0</span>
+    <span id="epic"></span>
     <br>
     <br>
     <button onclick="mine()" style="color:red;">do monet</button>
@@ -49,12 +49,52 @@
     <button onclick="rddt()" style="color:silver;">buy reddit silver</button>
     <button onclick="ecoin()" style="color:gold;">become epic</button>
     <script>
-      monets = 0;
-      cash = 0;
-      arc = 0;
-      reddit = 0;
-      epic = 0;
+      if (localStorage.getItem("monets") == null){
+        monets = 0;
+        localStorage.setItem("monets", 0);
+      }
+
+      else {monets = parseInt(localStorage.monets);}
+      //monets = 0;
+
+      if (localStorage.getItem("cash") == null){
+        cash = 0;
+        localStorage.setItem("cash", 0);
+      }
+
+      else {cash = parseInt(localStorage.cash);}
+      //cash = 0;
+
+      if (localStorage.getItem("arc") == null){
+        arc = 0;
+        localStorage.setItem("arc", 0)
+      }
+
+      else {arc = parseInt(localStorage.arc);}
+      //arc = 0;
+
+      if (localStorage.getItem("reddit") == null){
+        reddit = 0;
+        localStorage.setItem("reddit", 0);
+      }
+
+      else {reddit = parseInt(localStorage.reddit);}
+      //reddit = 0;
+
+      if (localStorage.getItem("epic") == null){
+        epic = 0;
+        localStorage.setItem("epic", 0);
+      }
+
+      else {epic = parseInt(localStorage.epic);}
+      //epic = 0;
+
       function refresh(){
+        localStorage.monets = monets;
+        localStorage.cash = cash;
+        localStorage.arc = arc;
+        localStorage.reddit = reddit;
+        localStorage.epic = epic;
         document.getElementById("monets").textContent=monets;
         document.getElementById("cash").textContent=cash;
         document.getElementById("arc").textContent=arc;
