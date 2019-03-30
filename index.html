@@ -15,21 +15,28 @@
     <span>reddit silver (reddit silver not redeemable for actual reddit silver!):</span>
     <span id="reddit">0</span>
     <br>
+    <span>epic coin:</span>
+    <span id="epic">0</span>
+    <br>
     <br>
     <button onclick="mine()">do monet</button>
     <button onclick="cashin()">¢@$ɥ in</button>
     <button onclick="arcc()">fly to the arctic</button>
     <button onclick="rddt()">buy reddit silver</button>
+    <button onclick="ecoin()">become epic</button>
     <script>
       monets = 0;
       cash = 0;
       arc = 0;
       reddit = 0;
+      epic = 0;
       function refresh(){
         document.getElementById("monets").textContent=monets;
         document.getElementById("cash").textContent=cash;
         document.getElementById("arc").textContent=arc;
         document.getElementById("reddit").textContent=reddit;
+        document.getElementById("epic").textContent=epic;
+        if (epic == 1){ alert("IF YOU USED A MF AUTOCLICKER, I WILL TAKE THIS WEBSITE DOWN."); }
       }
 
       function mine(){
@@ -69,6 +76,16 @@
         }
 
         else {alert("you need more experience in the arctic before you can get a reddit silver!");}
+      }
+
+      function ecoin(){
+        if (reddit >= 5){
+          reddit = reddit-5;
+          epic += 1;
+          refresh()
+        }
+
+        else { alert("you need more reddit silver before you can become E P I C!"); }
       }
     </script>
   </body>
