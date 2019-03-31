@@ -29,6 +29,13 @@
         margin-top: 3px;
         margin-bottom: 3px;
       }
+
+      span[name="header"]{
+        display:inline-block;
+        border:solid 2px black;
+        background-color:crimson;
+        margin-bottom:3px;
+      }
     </style>
     <title>monet miner</title>
   </head>
@@ -60,9 +67,18 @@
     <button onclick="ecoin()" style="color:gold;">become epic</button>
     <br>
     <br>
+    <span name="header">Market Secrets:</span>
+    <br>
+    <span name="label">monet per click:</span>
+    <span id="monetP"></span>
+    <br>
+    <br>
+    <button onclick="buy()" id="MPB" onmouseover="change(1)" onmouseout="change(2)" style="height:40px;width:222;">buy super illegal monet doer upper</button>
+    <br>
+    <br>
     <span style="color:gainsboro;">* reddit silver not redeemable for actual reddit silver.</span>
     <script>
-      if (localStorage.getItem("monets") == null){
+      if (localStorage.getItem("monets") == null){ //monet local Storage & setting defaults
         monets = 0;
         localStorage.setItem("monets", 0);
       }
@@ -70,7 +86,7 @@
       else {monets = parseInt(localStorage.monets);}
       //monets = 0;
 
-      if (localStorage.getItem("cash") == null){
+      if (localStorage.getItem("cash") == null){ //cash local Storage & setting defaults
         cash = 0;
         localStorage.setItem("cash", 0);
       }
@@ -78,7 +94,7 @@
       else {cash = parseInt(localStorage.cash);}
       //cash = 0;
 
-      if (localStorage.getItem("arc") == null){
+      if (localStorage.getItem("arc") == null){ //arc local Storage & setting defaults
         arc = 0;
         localStorage.setItem("arc", 0)
       }
@@ -86,7 +102,7 @@
       else {arc = parseInt(localStorage.arc);}
       //arc = 0;
 
-      if (localStorage.getItem("reddit") == null){
+      if (localStorage.getItem("reddit") == null){ //reddit local Storage & setting defaults
         reddit = 0;
         localStorage.setItem("reddit", 0);
       }
@@ -94,7 +110,7 @@
       else {reddit = parseInt(localStorage.reddit);}
       //reddit = 0;
 
-      if (localStorage.getItem("epic") == null){
+      if (localStorage.getItem("epic") == null){ //epic local Storage & setting defaults
         epic = 0;
         localStorage.setItem("epic", 0);
       }
@@ -102,26 +118,34 @@
       else {epic = parseInt(localStorage.epic);}
       //epic = 0;
 
-      function refresh(){
+      if (localStorage.monetP == null){ //monetPer click local Storage & setting defaults
+        monetP = 1;
+        localStorage.setItem("monetP", 1);
+      }
+
+      else {monetP = parseInt(localStorage.monetP);}
+
+      function refresh(){ // ran after every single action to update the localStorage and span elements on the page.
         localStorage.monets = monets;
         localStorage.cash = cash;
         localStorage.arc = arc;
         localStorage.reddit = reddit;
         localStorage.epic = epic;
+        localStorage.monetP = monetP;
         document.getElementById("monets").textContent=monets;
         document.getElementById("cash").textContent=cash;
         document.getElementById("arc").textContent=arc;
         document.getElementById("reddit").textContent=reddit;
         document.getElementById("epic").textContent=epic;
-
+        document.getElementById("monetP").textContent=monetP;
       }
 
-      function mine(){
-        monets += 1;
+      function mine(){ //the function that generates monets
+        monets += monetP;
         refresh()
       }
 
-      function cashin(){
+      function cashin(){ // the function that converts monets to cash
         if (monets >= 5){
           monets = monets-5;
           cash = cash+1;
@@ -133,7 +157,7 @@
 
       }
 
-      function arcc(){
+      function arcc(){ //the function that converts cash to arc
         if (cash >= 5){
           cash = cash-5;
           arc += 1;
@@ -145,7 +169,7 @@
 
       }
 
-      function rddt(){
+      function rddt(){ //the function that converts arc to reddit silver
         if (arc >= 5){
           arc = arc-5;
           reddit += 1;
@@ -155,7 +179,7 @@
         else {alert("you need more experience in the arctic before you can get a reddit silver!");}
       }
 
-      function ecoin(){
+      function ecoin(){ //the function that converts reddit to epic
         if (reddit >= 5){
           reddit = reddit-5;
           epic += 1;
@@ -164,6 +188,29 @@
         }
 
         else { alert("you need more reddit silver before you can become E P I C!"); }
+      }
+
+      function buy(){ //here is the function for purchasing monetP(er) click
+        if (epic >= 1){
+          monetP += 1;
+          epic -= 1;
+          refresh()
+        }
+
+        else {alert("you need an epic coin for that purchase!");}
+      }
+
+      function price(){
+        document.getElementById("MPB").textContent = "price is 1 epicness";
+      }
+
+      function change(to){
+        if (to == 1){
+          document.getElementById("MPB").textContent = "1 epic coin";
+        }
+        if (to == 2){
+          document.getElementById("MPB").textContent = "buy super illegal monet doer upper";
+        }
       }
     </script>
   </body>
