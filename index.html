@@ -73,7 +73,7 @@
     <span id="monetP"></span>
     <br>
     <br>
-    <button onclick="buy()" id="MPB" onmouseover="change(1)" onmouseout="change(2)" style="height:40px;width:222;">buy super illegal monet doer upper</button>
+    <button onclick="buy()" id="MPB" onmouseover="document.getElementById('MPB').textContent = '1 epic coin';" onmouseout="document.getElementById('MPB').textContent = 'buy super illegal monet doer upper';" style="height:40px;width:222;">buy super illegal monet doer upper</button>
     <br>
     <br>
     <span style="color:gainsboro;">* reddit silver not redeemable for actual reddit silver.</span>
@@ -198,19 +198,6 @@
         }
 
         else {alert("you need an epic coin for that purchase!");}
-      }
-
-      function price(){
-        document.getElementById("MPB").textContent = "price is 1 epicness";
-      }
-
-      function change(to){
-        if (to == 1){
-          document.getElementById("MPB").textContent = "1 epic coin";
-        }
-        if (to == 2){
-          document.getElementById("MPB").textContent = "buy super illegal monet doer upper";
-        }
       }
     </script>
   </body>
