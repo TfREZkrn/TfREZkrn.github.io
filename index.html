@@ -82,6 +82,11 @@
     <button onclick="buy()" id="MPB" onmouseover="document.getElementById('MPB').textContent = '1 epic coin';" onmouseout="document.getElementById('MPB').textContent = 'buy super illegal monet doer upper';" style="height:40px;width:222;">buy super illegal monet doer upper</button>
     <br>
     <br>
+    <br>
+    <br>
+    <button onclick="startOvr()" style="background-color:darkred;color:red;">RESET ALL PROGRESS</button>
+    <br>
+    <br>
     <span style="color:gainsboro;">* reddit silver not redeemable for actual reddit silver.</span>
     <script>
       if (localStorage.getItem("monets") == null){ //monet local Storage & setting defaults
@@ -264,6 +269,14 @@
         else{
           allT = false;
           document.getElementById("alltoggle").textContent = "buy max: OFF";
+        }
+      }
+
+      function startOvr(){
+        yn = confirm("are you sure???");
+        if (yn == true){
+          localStorage.clear();
+          location.reload();
         }
       }
     </script>
