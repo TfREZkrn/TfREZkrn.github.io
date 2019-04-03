@@ -64,6 +64,9 @@
     <span name="label"><b>B</b>hit<b>K</b>oin!:</span>
     <span id="btc"></span>
     <br>
+    <span name="label">elon musks:</span>
+    <span id="musk"></span>
+    <br>
     <br>
     <span style="display:inline-block;border:solid 2px black;background-color:crimson;margin-bottom:3px;" name="header">Market Options:</span>
     <br>
@@ -74,6 +77,7 @@
     <button onclick="ecoin()" style="color:navajowhite;">become epic</button>
     <button onclick="IQ()" style="color:LawnGreen">be smart</button>
     <button onclick="btc()" style="color:gold;">create <b>B</b>hit<b>K</b>oin!</button>
+    <button onclick="musk()" style="color:mediumorchid;">purchase elon</button>
     <button onclick="alltoggle()" id="alltoggle" style="margin-left:1%;">buy max: OFF</button>
     <br>
     <br>
@@ -152,6 +156,13 @@
 
       else {boot = parseInt(localStorage.boot);}
 
+      if (localStorage.elons == null){
+        elons = 0;
+        localStorage.elons = 0;
+      }
+
+      else {elons = parseInt(localStorage.elons);}
+
       if (localStorage.monetP == null){ //monetPer click local Storage & setting defaults
         monetP = 1;
         localStorage.setItem("monetP", 1);
@@ -171,6 +182,7 @@
         localStorage.eeq = eeq;
         localStorage.monetP = monetP;
         localStorage.boot = boot;
+        localStorage.elons = elons;
         document.getElementById("monets").textContent=monets;
         document.getElementById("cash").textContent=cash;
         document.getElementById("arc").textContent=arc;
@@ -178,6 +190,7 @@
         document.getElementById("epic").textContent=epic;
         document.getElementById("IQ").textContent = eeq;
         document.getElementById("btc").textContent = boot;
+        document.getElementById("musk").textContent = elons;
         document.getElementById("monetP").textContent=monetP;
       }
 
@@ -282,6 +295,21 @@
           refresh()
         }
         else {alert("you need a higher IQ before you can buy a bitcoin!");}
+      }
+
+      function musk(){
+        if (boot >=5 ){
+          if (allT == true){
+            elons += Math.floor(boot/5);
+            boot %= 5;
+          }
+          else{
+            boot -= 5;
+            elons += 1;
+          }
+          refresh()
+        }
+        else{alert("you need more bitcoins to purchase elon musk!");}
       }
 
       function buy(){ //here is the function for purchasing monetP(er) click
