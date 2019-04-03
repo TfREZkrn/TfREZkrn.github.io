@@ -327,8 +327,14 @@
       function startOvr(){
         yn = confirm("are you sure???");
         if (yn == true){
-          localStorage.clear();
-          location.reload();
+          yn = confirm("but like, really. Sereously?");
+          if(yn == true){
+            yn = confirm("for real, this will wipe EVERYTHING.");
+            if(yn == true){
+              localStorage.clear();
+              location.reload();
+            }
+          }
         }
       }
     </script>
