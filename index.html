@@ -395,8 +395,11 @@
           if(yn == true){
             yn = confirm("for real, this will wipe EVERYTHING.");
             if(yn == true){
-              localStorage.clear();
-              location.reload();
+              yn = confirm("zack.");
+              if (yn == true){
+                localStorage.clear();
+                location.reload();
+              }
             }
           }
         }
