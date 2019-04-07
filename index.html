@@ -23,7 +23,7 @@
 
       span[id]{
         border:solid 1px black;
-        background-color:lightgray;
+        background-color:lightslategray;
         padding:2px;
       }
 
@@ -43,57 +43,63 @@
     <title>monet miner</title>
   </head>
   <body onload="refresh()">
-    <span style="color:black;display:inline-block;border:solid 2px black;background-color:crimson;" name="header">Market:</span>
+    <div style="display:inline-block;border:solid;width:47%;padding:1%;background:lightgray;">
+      <span style="color:black;display:inline-block;border:solid 2px black;background-color:crimson;" name="header">Market:</span>
+      <br>
+      <span  name="label">monets:</span>
+      <span id="monets" name="counters"></span>
+      <br>
+      <span name="label">¢@$ɥed out:</span>
+      <span id="cash" name="counters"></span>
+      <br>
+      <span name="label">arkittik crekdits:</span>
+      <span id="arc" name="counters"></span>
+      <br>
+      <span name="label">reddit silver*:</span>
+      <span id="reddit" name="counters"></span>
+      <br>
+      <span name="label">epic coin:</span>
+      <span id="epic" name="counters"></span>
+      <br>
+      <span name="label">IQ:</span>
+      <span id="IQ" name="counters"></span>
+      <br>
+      <span name="label"><b>B</b>oot<b>K</b>oin!:</span>
+      <span id="btc" name="counters"></span>
+      <br>
+      <span name="label">elon musks:</span>
+      <span id="musk" name="counters"></span>
+      <br>
+      <span name="label">score:</span>
+      <span id="score" name="counters"></span>
+      <br>
+      <br>
+      <span style="display:inline-block;border:solid 2px black;background-color:crimson;margin-bottom:3px;" name="header">Market Options:</span>
+      <br>
+      <button onclick="mine()" style="color:red;">do monet</button>
+      <button onclick="cashin()" style="color:limegreen;">¢@$ɥ in</button>
+      <button onclick="arcc()" style="color:white;">fly to the arctic</button>
+      <button onclick="rddt()" style="color:silver;">buy reddit silver</button>
+      <button onclick="ecoin()" style="color:navajowhite;">become epic</button>
+      <button onclick="IQ()" style="color:LawnGreen">be smart</button>
+      <button onclick="btc()" style="color:gold;">create <b>B</b>oot<b>K</b>oin!</button>
+      <button onclick="musk()" style="color:mediumorchid;">purchase elon</button>
+      <button onclick="score()" style="color:turquoise;">farm points</button>
+      <button onclick="alltoggle()" id="alltoggle" style="margin-left:1%;">buy max: OFF</button>
+    </div>
+    <div style="bottom:26.2%;position:relative;display:inline-block;border:solid;width:47%;padding:1%;background:lightgray;">
+      <div>
+        <span name="header">Market Secrets:</span>
+        <br>
+        <span name="label">monet per click:</span>
+        <span id="monetP" name="counters"></span>
+      </div>
+      <br>
+      <br>
+      <button onclick="buy()" id="MPB" onmouseover="document.getElementById('MPB').textContent = '1 epic coin';" onmouseout="document.getElementById('MPB').textContent = 'buy super illegal monet doer upper';" style="width:222px;">buy super illegal monet doer upper</button>
+    </div>
     <br>
-    <span  name="label">monets:</span>
-    <span id="monets" name="counters"></span>
     <br>
-    <span name="label">¢@$ɥed out:</span>
-    <span id="cash" name="counters"></span>
-    <br>
-    <span name="label">arkittik crekdits:</span>
-    <span id="arc" name="counters"></span>
-    <br>
-    <span name="label">reddit silver*:</span>
-    <span id="reddit" name="counters"></span>
-    <br>
-    <span name="label">epic coin:</span>
-    <span id="epic" name="counters"></span>
-    <br>
-    <span name="label">IQ:</span>
-    <span id="IQ" name="counters"></span>
-    <br>
-    <span name="label"><b>B</b>oot<b>K</b>oin!:</span>
-    <span id="btc" name="counters"></span>
-    <br>
-    <span name="label">elon musks:</span>
-    <span id="musk" name="counters"></span>
-    <br>
-    <span name="label">score:</span>
-    <span id="score" name="counters"></span>
-    <br>
-    <br>
-    <span style="display:inline-block;border:solid 2px black;background-color:crimson;margin-bottom:3px;" name="header">Market Options:</span>
-    <br>
-    <button onclick="mine()" style="color:red;">do monet</button>
-    <button onclick="cashin()" style="color:limegreen;">¢@$ɥ in</button>
-    <button onclick="arcc()" style="color:white;">fly to the arctic</button>
-    <button onclick="rddt()" style="color:silver;">buy reddit silver</button>
-    <button onclick="ecoin()" style="color:navajowhite;">become epic</button>
-    <button onclick="IQ()" style="color:LawnGreen">be smart</button>
-    <button onclick="btc()" style="color:gold;">create <b>B</b>oot<b>K</b>oin!</button>
-    <button onclick="musk()" style="color:mediumorchid;">purchase elon</button>
-    <button onclick="score()" style="color:turquoise;">farm points</button>
-    <button onclick="alltoggle()" id="alltoggle" style="margin-left:1%;">buy max: OFF</button>
-    <br>
-    <br>
-    <span name="header">Market Secrets:</span>
-    <br>
-    <span name="label">monet per click:</span>
-    <span id="monetP" name="counters"></span>
-    <br>
-    <br>
-    <button onclick="buy()" id="MPB" onmouseover="document.getElementById('MPB').textContent = '1 epic coin';" onmouseout="document.getElementById('MPB').textContent = 'buy super illegal monet doer upper';" style="width:222px;">buy super illegal monet doer upper</button>
     <button onclick="counter()" id="deletme">spend 10 elons to see what this does!</button>
     <button onclick="labelit()" id="changeme">spend 10 iq to see what this does!</button>
     <button onclick="alltoggleMS()" id="alltoggleMS" style="margin-left:1%;">buy max: OFF</button>
