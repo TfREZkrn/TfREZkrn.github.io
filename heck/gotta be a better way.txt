@@ -1,0 +1,3 @@
+there's gotta be a better way!
+introducing git: you need a new file to make a new folder
+why would you have a new folder without a new file???
